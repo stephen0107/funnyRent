@@ -17,17 +17,13 @@
                <!-- <value>classpath:/mapperExt/**/*.xml</value>-->
             </list>
         </property>
-        <property name="configLocation" value="classpath:/spring-context-mybatis.xml"></property>
+        <property name="configLocation" value="classpath:/mybatis-config.xml"></property>
     </bean>
 
-    <!--    &lt;!&ndash; 扫描 Mapper &ndash;&gt;-->
-    <!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-    <!--        <property name="basePackage" value="com.healthycustomhycustom.*.dao" />-->
-    <!--    </bean>-->
 
     <!-- 通用 Mapper -->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.ali.rent.*.dao.mapping"/>
+        <property name="basePackage" value="com.ali.rent.dao.mapping"/>
         <property name="properties">
             <value>mappers=tk.mybatis.mapper.common.Mapper</value>
         </property>
