@@ -25,5 +25,6 @@
     -->
     id, city_id, username, password, phone, email, sex, id_card, portrait, business_area, 
     capacity, registration_time, flag
+    
   </sql>
 </mapper>
