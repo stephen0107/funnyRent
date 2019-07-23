@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -21,7 +22,9 @@ public class HosterMapperTest {
     public void testSelectAll(){
         List<Hoster> hosters = hosterMapper.selectAll();
         hosters.forEach(hoster -> {
-            System.out.println(hoster.getPhone());
+            if(hoster.getId() == 1){
+                System.out.println("信息：："+hoster.toString());
+            }
         });
     }
 }
