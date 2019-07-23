@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ali.rent.dao.mapping.RoomMapper" >
+  <resultMap id="BaseResultMap" type="com.ali.rent.pojo.Room" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="hoster_id" property="hosterId" jdbcType="INTEGER" />
+    <result column="site_dis_id" property="siteDisId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="size" property="size" jdbcType="INTEGER" />
+    <result column="layout" property="layout" jdbcType="VARCHAR" />
+    <result column="intro" property="intro" jdbcType="VARCHAR" />
+    <result column="picture" property="picture" jdbcType="VARCHAR" />
+    <result column="trait" property="trait" jdbcType="VARCHAR" />
+    <result column="lease_pattern" property="leasePattern" jdbcType="VARCHAR" />
+    <result column="lease_time" property="leaseTime" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="flag" property="flag" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, hoster_id, site_dis_id, name, address, size, layout, intro, picture, trait, lease_pattern, 
+    lease_time, price, flag
+  </sql>
+</mapper>
