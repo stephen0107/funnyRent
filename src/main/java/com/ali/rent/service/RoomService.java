@@ -1,6 +1,11 @@
 package com.ali.rent.service;
 
-import com.ali.rent.dao.mapping.RoomMapper;
 
-public interface RoomService extends RoomMapper {
+import com.ali.rent.pojo.Room;
+
+import java.util.List;
+
+public interface RoomService {
+
+    List<Room> selectAll();
 }
