@@ -18,4 +18,16 @@ public class RoomServiceImpl implements RoomService {
         List<Room> rooms = roomMapper.selectAll();
         return rooms;
     }
+
+    @Override
+    public Integer updateById(Integer id) {
+        return roomMapper.updateRoom(id);
+    }
+
+    @Override
+    public Room getRoomById(Integer id) {
+        Room room = new Room();
+        room.setId(id);
+        return roomMapper.selectByPrimaryKey(room);
+    }
 }
