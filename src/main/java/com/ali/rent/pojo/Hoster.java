@@ -266,4 +266,23 @@ public class Hoster {
     public void setFlag(Integer flag) {
         this.flag = flag;
     }
+
+    @Override
+    public String toString() {
+        return "Hoster{" +
+                "id=" + id +
+                ", cityId=" + cityId +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", sex='" + sex + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", portrait='" + portrait + '\'' +
+                ", businessArea='" + businessArea + '\'' +
+                ", capacity='" + capacity + '\'' +
+                ", registrationTime=" + registrationTime +
+                ", flag=" + flag +
+                '}';
+    }
 }
