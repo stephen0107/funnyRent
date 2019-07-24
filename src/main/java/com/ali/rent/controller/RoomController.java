@@ -17,8 +17,7 @@ public class RoomController {
     private RoomService roomService;
     @RequestMapping(value = "/toRoomPage",method = RequestMethod.GET)
     public String toRoomPage(){
-
-        return "login";
+        return "24_Property_Single";
     }
 
 }
