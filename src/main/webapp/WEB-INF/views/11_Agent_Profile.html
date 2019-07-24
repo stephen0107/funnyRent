@@ -1,17 +1,17 @@
 ﻿<!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Selio - Real Estate HTML Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/color.css">
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="shortcut icon" href="../../static/assets/images/favicon.png"/>
+    <link rel="stylesheet" href="../../static/assets/css/animate.min.css"/>
+    <link rel="stylesheet" href="../../static/assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/assets/css/responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/assets/css/color.css"/>
 </head>
 
 <body>
@@ -31,11 +31,11 @@
                             <div class="header-address">
                                 <a href="#">
                                     <i class="la la-phone-square"></i>
-                                    <span>(647) 346-0855</span>
+                                    <span th:text="${hoster.phone}"></span>
                                 </a>
                                 <a href="#">
                                     <i class="la la-map-marker"></i>
-                                    <span>CF Fairview Mall, Toronto, ON</span>
+                                    <span th:text="${hoster.cityId}">CF Fairview Mall, Toronto, ON</span>
                                 </a>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                         <div class="col-xl-12">
                             <nav class="navbar navbar-expand-lg navbar-light">
                                 <a class="navbar-brand" href="01_Home.html">
-                                    <img src="assets/images/logo.png" alt="">
+                                    <img src="../../static/assets/images/logo.png" alt=""/>
                                 </a>
                                 <button class="menu-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
                                     <span class="icon-spar"></span>
@@ -77,7 +77,7 @@
                                     <ul class="navbar-nav mr-auto">
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                                                Home
+                                                家
                                             </a>
                                             <div class="dropdown-menu animated">
                                                 <a class="dropdown-item" href="01_Home.html">White Menu with Center Search</a>
@@ -105,7 +105,7 @@
                                             <div class="dropdown-menu animated">
                                                 <a class="dropdown-item" href="21_List_Layout_With_Map.html">List Layout with Map</a>
                                                 <a class="dropdown-item" href="22_List_Layout_With_Sidebar.html">List Layout with Sidebar</a>
-                                                <a class="dropdown-item active" href="11_Agent_Profile.html">Agent Profile</a>
+                                                <a class="dropdown-item active" href="11_Agent_Profile.html">房东</a>
                                                 <a class="dropdown-item" href="24_Property_Single.html">Property Single</a>
                                             </div>
                                         </li>
@@ -155,15 +155,15 @@
             <div class="popup-form">
                 <form>
                     <div class="form-field">
-                        <input type="text" name="username" placeholder="Username">
+                        <input type="text" name="username" placeholder="Username"/>
                     </div>
                     <div class="form-field">
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="text" name="password" placeholder="Password"/>
                     </div>
                     <div class="form-cp">
                         <div class="form-field">
                             <div class="input-field">
-                                <input type="checkbox" name="ccc" id="cc1">
+                                <input type="checkbox" name="ccc" id="cc1"/>
                                 <label for="cc1">
                                     <span></span>
                                     <small>Remember me</small>
@@ -183,18 +183,18 @@
             <div class="popup-form">
                 <form>
                     <div class="form-field">
-                        <input type="text" name="username" placeholder="Username">
+                        <input type="text" name="username" placeholder="Username"/>
                     </div>
                     <div class="form-field">
-                        <input type="text" name="email" placeholder="Email">
+                        <input type="text" name="email" placeholder="Email"/>
                     </div>
                     <div class="form-field">
-                        <input type="text" name="password" placeholder="Password">
+                        <input type="text" name="password" placeholder="Password"/>
                     </div>
                     <div class="form-cp">
                         <div class="form-field">
                             <div class="input-field">
-                                <input type="checkbox" name="ccc" id="cc2">
+                                <input type="checkbox" name="ccc" id="cc2"/>
                                 <label for="cc2">
                                     <span></span>
                                     <small>I agree with terms</small>
@@ -211,10 +211,10 @@
         <section class="pager-sec bfr">
             <div class="container">
                 <div class="pager-sec-details">
-                    <h3>Agent Profile</h3>
+                    <h3>房东信息</h3>
                     <ul>
-                        <li><a href="#" title="">Home</a></li>
-                        <li><span>Agent Profile</span></li>
+                        <li><a href="#" title="">家</a></li>
+                        <li><span>房东</span></li>
                     </ul>
                 </div><!--pager-sec-details end-->
             </div>
@@ -227,15 +227,15 @@
                         <div class="col-xl-8 col-lg-9 col-md-12 pl-0 pr-0">
                             <div class="agent-profile">
                                 <div class="agent-img">
-                                    <img src="assets/images/resources/agent-img.jpg" alt="">
+                                    <img th:src="${hoster.portrait}" alt=""/>
                                 </div><!--agent-img end-->
                                 <div class="agent-info">
-                                    <h3>Tomas Wilkinson</h3>
-                                    <h4>Douglas and Eleman Agency</h4>
-                                    <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet maurs. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odi non  mauris vitae erat consequat.</p>
+                                    <h3 th:text="${hoster.username}">Tomas Wilkinson</h3>
+                                    <h4 th:text="${hoster.capacity}">Douglas and Eleman Agency</h4>
+                                    <p th:text="${hoster.businessArea}">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet maurs. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odi non  mauris vitae erat consequat.</p>
                                     <ul class="cont-links">
-                                        <li><span><i class="la la-phone"></i>+1 212-925-3797</span></li>
-                                        <li><a href="mailto:example@example.com" title=""><i class="la la-envelope"></i>tomas@contact.com</a></li>
+                                        <li><span th:text="${hoster.phone}"><i class="la la-phone"></i></span></li>
+                                        <li><a href="mailto:example@example.com" title="" th:text="${hoster.email}"><i class="la la-envelope"></i>tomas@contact.com</a></li>
                                     </ul>
                                     <ul class="socio-links">
                                         <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
@@ -251,13 +251,13 @@
                                 <h3>Contact Agent</h3>
                                 <form>
                                     <div class="form-field">
-                                        <input type="text" name="name" placeholder="Your Name">
+                                        <input type="text" name="name" placeholder="Your Name"/>
                                     </div><!--form-field end-->
                                     <div class="form-field">
-                                        <input type="text" name="emal" placeholder="Your Email">
+                                        <input type="text" name="emal" placeholder="Your Email"/>
                                     </div><!--form-field end-->
                                     <div class="form-field">
-                                        <input type="text" name="phone" placeholder="Your Phone">
+                                        <input type="text" name="phone" placeholder="Your Phone"/>
                                     </div><!--form-field end-->
                                     <div class="form-field">
                                         <textarea name="message" placeholder="Your Message"></textarea>
@@ -292,7 +292,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-sm-6 col-md-4">
                         <div class="bottom-logo">
-                            <img src="assets/images/logo.png" alt="" class="img-fluid">
+                            <img src="../../static/assets/images/logo.png" alt="" class="img-fluid"/>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-md-3">
@@ -362,16 +362,16 @@
     </div><!--wrapper end-->
 
 
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="../../static/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="../../static/assets/js/bootstrap.min.js"></script>
+    <script src="../../static/assets/js/scripts.js"></script>
 
     <!-- Maps -->
     <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="assets/js/map-cluster/infobox.min.js"></script>
-    <script src="assets/js/map-cluster/markerclusterer.js"></script>
-    <script src="assets/js/map-cluster/maps.js"></script>
+    <script src="../../static/assets/js/map-cluster/infobox.min.js"></script>
+    <script src="../../static/assets/js/map-cluster/markerclusterer.js"></script>
+    <script src="../../static/assets/js/map-cluster/maps.js"></script>
 
 
 

@@ -25,4 +25,9 @@ public class HosterMapperTest {
 
         System.out.println("信息：："+hoster);
     }
+    @Test
+    public void UpdateHosterTest(){
+        int hoster = hosterService.updateHoster(1,"123","110120144","173919711@qq.com",
+                "头","白云","好人");
+    }
 }
