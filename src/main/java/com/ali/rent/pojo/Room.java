@@ -1,9 +1,10 @@
 package com.ali.rent.pojo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "room")
-public class Room {
+public class Room implements Serializable {
     /**
      * 主键
      */

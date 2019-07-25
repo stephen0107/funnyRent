@@ -31,30 +31,4 @@
     id, hoster_id, site_dis_id, name, address, size, layout, intro, pict1, pict2, pict3, 
     pict4, pict5, trait, lease_pattern, lease_time, price, flag
   </sql>
-  <resultMap id="BaseResultMap" type="com.ali.rent.pojo.Room">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="hoster_id" jdbcType="INTEGER" property="hosterId" />
-    <result column="site_dis_id" jdbcType="INTEGER" property="siteDisId" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="size" jdbcType="INTEGER" property="size" />
-    <result column="layout" jdbcType="VARCHAR" property="layout" />
-    <result column="intro" jdbcType="VARCHAR" property="intro" />
-    <result column="picture" jdbcType="VARCHAR" property="picture" />
-    <result column="trait" jdbcType="VARCHAR" property="trait" />
-    <result column="lease_pattern" jdbcType="VARCHAR" property="leasePattern" />
-    <result column="lease_time" jdbcType="VARCHAR" property="leaseTime" />
-    <result column="price" jdbcType="INTEGER" property="price" />
-    <result column="flag" jdbcType="INTEGER" property="flag" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    id, hoster_id, site_dis_id, name, address, size, layout, intro, picture, trait, lease_pattern, 
-    lease_time, price, flag
-  </sql>
 </mapper>

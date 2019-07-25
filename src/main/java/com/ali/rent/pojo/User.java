@@ -1,9 +1,10 @@
 package com.ali.rent.pojo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Id
     private Integer id;
 
