@@ -17,21 +17,9 @@
     <link rel="stylesheet" type="text/css" href="../../static/assets/css/color.css"/>
     <script type="text/javascript" src="../../static/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
-     /* $(function () {
-          $(".property-img:eq(0) img").toggle(function () {
-              $(this).attr("src","../../static/assets/images/resources/blog-img2.jpg");
-          },function () {
-              $(this).attr("src","../../static/assets/images/resources/blog-img2.jpg");
-          },function () {
-              $(this).attr("src","../../static/assets/images/resources/blog-img3.jpg");
-          },function () {
-              $(this).attr("src","../../static/assets/images/resources/blog-img4.jpg");
-          },function () {
-              $(this).attr("src","../../static/assets/images/resources/blog-img5.jpg");
-          },function () {
-              $(this).attr("src","../../static/assets/images/resources/blog-img.jpg");
-          })
-      })*/
+      $(function () {
+
+      })
     </script>
 </head>
 
@@ -223,11 +211,11 @@
                                 </div>
                                 <input type="hidden" name="gender"/>
                                 <ul class="dropeddown">
-                                    <li>300$</li>
-                                    <li>400$</li>
-                                    <li>500$</li>
-                                    <li>200$</li>
-                                    <li>600$</li>
+                                    <li>300¥</li>
+                                    <li>400¥</li>
+                                    <li>500¥</li>
+                                    <li>200¥</li>
+                                    <li>600¥</li>
                                 </ul>
                             </div>
                         </div>
@@ -241,11 +229,11 @@
                                 </div>
                                 <input type="hidden" name="gender"/>
                                 <ul class="dropeddown">
-                                    <li>2000</li>
-                                    <li>3000</li>
-                                    <li>4000</li>
-                                    <li>5000</li>
-                                    <li>6000</li>
+                                    <li>2000¥</li>
+                                    <li>3000¥</li>
+                                    <li>4000¥</li>
+                                    <li>5000¥</li>
+                                    <li>6000¥</li>
                                 </ul>
                             </div>
                         </div>
@@ -265,8 +253,8 @@
                     <div class="card">
                         <div class="card-body">
                             <a href="#">
-                                <h3>传统公寓</h3>
-                                <p><i class="la la-map-marker"></i>212 5th Ave, New York</p>
+                                <h3 th:text="${room.name}"></h3>
+                                <p th:text="${room.address}"><i class="la la-map-marker"></i>212 5th Ave, New York</p>
                             </a>
                             <ul>
                                 <li>3室</li>
@@ -289,7 +277,7 @@
                                         <div class="property-img">
                                             <img src="../../static/assets/images/resources/blog-img.jpg" alt=""/>
                                         </div><!--property-img end--><div class="property-img">
-                                        <img src="../../static/assets/images/resources/blog-img2.jpg" alt=""/>
+                                        <img th:src="@{'../../static/assets/images/resources/'+${room.picture}}" alt=""/>
                                     </div><!--property-img end-->
                                         <div class="property-img">
                                             <img src="../../static/assets/images/resources/blog-img3.jpg" alt=""/>
@@ -310,7 +298,7 @@
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-4 thumb-img">
                                                 <div class="property-img">
-                                                    <img src="../../static/assets/images/resources/blog-img2.jpg" alt=""/>
+                                                    <img th:src="@{'../../static/assets/images/resources/'+${room.picture}}" alt=""/>
                                                 </div><!--property-img end-->
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-4 thumb-img">

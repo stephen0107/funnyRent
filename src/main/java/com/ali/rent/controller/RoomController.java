@@ -2,6 +2,7 @@ package com.ali.rent.controller;
 
 import com.ali.rent.pojo.Room;
 import com.ali.rent.service.RoomService;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,7 +29,6 @@ public class RoomController {
      */
     @RequestMapping("/{id}")
     public String showPic(@PathVariable("id") Integer id, ModelMap modelMap){
-
         modelMap.addAttribute("room",roomService.getRoomById(id));
         return "24_Property_Single";
     }
