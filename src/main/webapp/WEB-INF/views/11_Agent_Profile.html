@@ -64,7 +64,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <nav class="navbar navbar-expand-lg navbar-light">
-                                <a class="navbar-brand" href="01_Home">
+                                <a class="navbar-brand" th:href="@{/home}">
                                     <img src="../../static/assets/images/logo.png" alt=""/>
                                 </a>
                                 <button class="menu-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
@@ -80,7 +80,7 @@
                                                 家
                                             </a>
                                             <div class="dropdown-menu animated">
-                                                <a class="dropdown-item" href="01_Home">White Menu with Center Search</a>
+                                                <a class="dropdown-item" th:href="@{/home}">White Menu with Center Search</a>
                                                 <a class="dropdown-item" href="02_Home.html">Image Menu with Center Search 2</a>
                                                 <a class="dropdown-item" href="03_Home.html">Map with Center Search</a>
                                                 <a class="dropdown-item" href="04_Home.html">Geo SVG Map</a>
@@ -227,15 +227,16 @@
                         <div class="col-xl-8 col-lg-9 col-md-12 pl-0 pr-0">
                             <div class="agent-profile">
                                 <div class="agent-img">
-                                    <img th:src="${hoster.portrait}" alt=""/>
+                                    <!--<img th:src="'../../static/assets/images/resources/ '${hoster.portrait}" alt=""/>-->
+                                    <img th:src="@{'../../static/images/hoster'+${hoster.portrait}}" alt=""/>
                                 </div><!--agent-img end-->
                                 <div class="agent-info">
                                     <h3 th:text="${hoster.username}">Tomas Wilkinson</h3>
                                     <h4 th:text="${hoster.capacity}">Douglas and Eleman Agency</h4>
                                     <p th:text="${hoster.businessArea}">Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet maurs. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odi non  mauris vitae erat consequat.</p>
                                     <ul class="cont-links">
-                                        <li><span th:text="${hoster.phone}"><i class="la la-phone"></i></span></li>
-                                        <li><a href="mailto:example@example.com" title="" th:text="${hoster.email}"><i class="la la-envelope"></i>tomas@contact.com</a></li>
+                                        <li><i class="la la-phone"></i><span th:text="${hoster.phone}"></span></li>
+                                        <li><i class="la la-envelope"></i><a href="mailto:example@example.com" title="" th:text="${hoster.email}">tomas@contact.com</a></li>
                                     </ul>
                                     <ul class="socio-links">
                                         <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
