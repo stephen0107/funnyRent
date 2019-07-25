@@ -1,13 +1,9 @@
 package com.ali.rent.pojo;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
-/**
- * @param
- */
 @Table(name = "room")
-public class Room implements Serializable {
+public class Room {
     /**
      * 主键
      */
@@ -54,7 +50,27 @@ public class Room implements Serializable {
     /**
      * 房间图片，用json数组
      */
-    private String picture;
+    private String pict1;
+
+    /**
+     * 房间图片
+     */
+    private String pict2;
+
+    /**
+     * 房间图片
+     */
+    private String pict3;
+
+    /**
+     * 房间图片
+     */
+    private String pict4;
+
+    /**
+     * 房间图片
+     */
+    private String pict5;
 
     /**
      * 房间特点，用json数组
@@ -230,19 +246,91 @@ public class Room implements Serializable {
     /**
      * 获取房间图片，用json数组
      *
-     * @return picture - 房间图片，用json数组
+     * @return pict1 - 房间图片，用json数组
      */
-    public String getPicture() {
-        return picture;
+    public String getPict1() {
+        return pict1;
     }
 
     /**
      * 设置房间图片，用json数组
      *
-     * @param picture 房间图片，用json数组
+     * @param pict1 房间图片，用json数组
      */
-    public void setPicture(String picture) {
-        this.picture = picture == null ? null : picture.trim();
+    public void setPict1(String pict1) {
+        this.pict1 = pict1 == null ? null : pict1.trim();
+    }
+
+    /**
+     * 获取房间图片
+     *
+     * @return pict2 - 房间图片
+     */
+    public String getPict2() {
+        return pict2;
+    }
+
+    /**
+     * 设置房间图片
+     *
+     * @param pict2 房间图片
+     */
+    public void setPict2(String pict2) {
+        this.pict2 = pict2 == null ? null : pict2.trim();
+    }
+
+    /**
+     * 获取房间图片
+     *
+     * @return pict3 - 房间图片
+     */
+    public String getPict3() {
+        return pict3;
+    }
+
+    /**
+     * 设置房间图片
+     *
+     * @param pict3 房间图片
+     */
+    public void setPict3(String pict3) {
+        this.pict3 = pict3 == null ? null : pict3.trim();
+    }
+
+    /**
+     * 获取房间图片
+     *
+     * @return pict4 - 房间图片
+     */
+    public String getPict4() {
+        return pict4;
+    }
+
+    /**
+     * 设置房间图片
+     *
+     * @param pict4 房间图片
+     */
+    public void setPict4(String pict4) {
+        this.pict4 = pict4 == null ? null : pict4.trim();
+    }
+
+    /**
+     * 获取房间图片
+     *
+     * @return pict5 - 房间图片
+     */
+    public String getPict5() {
+        return pict5;
+    }
+
+    /**
+     * 设置房间图片
+     *
+     * @param pict5 房间图片
+     */
+    public void setPict5(String pict5) {
+        this.pict5 = pict5 == null ? null : pict5.trim();
     }
 
     /**
