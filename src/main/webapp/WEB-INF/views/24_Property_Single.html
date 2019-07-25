@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <nav class="navbar navbar-expand-lg navbar-light">
-                                <a class="navbar-brand" href="01_Home.html">
+                                <a class="navbar-brand" href="01_Home">
                                     <img src="../../static/assets/images/logo.png" alt=""/>
                                 </a>
                                 <button class="menu-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
@@ -334,48 +334,11 @@
                                 <!--property-imgs end-->
                                 <div class="descp-text">
                                     <h3>描述</h3>
-                                    <p>该套房子属于三房户型，楼龄新，阳台及有两间卧室朝南向望花园，，另一间超北向，房子保养很好；目前空置着，我司有钥匙，业主因考虑置换更大户型，才将这套房子出售，如您是在找南向三房户型的，您可以参考一下的。详细情况欢迎您来电咨询，我以最专业的服务回馈您。</p>
+                                    <p th:text="${room.intro}"><!--该套房子属于三房户型，楼龄新，阳台及有两间卧室朝南向望花园，，另一间超北向，房子保养很好；目前空置着，我司有钥匙，业主因考虑置换更大户型，才将这套房子出售，如您是在找南向三房户型的，您可以参考一下的。详细情况欢迎您来电咨询，我以最专业的服务回馈您。--></p>
                                 </div><!--descp-text end-->
                                 <div class="details-info">
-                                    <h3>细节简介</h3>
-                                    <ul>
-                                        <li>
-                                            <h4>建筑类型:</h4>
-                                            <span>别墅</span>
-                                        </li>
-                                        <li>
-                                            <h4>建成年份:</h4>
-                                            <span>2012</span>
-                                        </li>
-                                        <li>
-                                            <h4>使用权限: </h4>
-                                            <span>87</span>
-                                        </li>
-                                        <li>
-                                            <h4>浴室:</h4>
-                                            <span>5</span>
-                                        </li>
-                                        <li>
-                                            <h4>卧室:</h4>
-                                            <span>7</span>
-                                        </li>
-                                        <li>
-                                            <h4>面积:</h4>
-                                            <span>555平分英尺</span>
-                                        </li>
-                                        <li>
-                                            <h4>设施:</h4>
-                                            <span>电梯</span>
-                                        </li>
-                                        <li>
-                                            <h4>冷却:</h4>
-                                            <span>中央空调</span>
-                                        </li>
-                                        <li>
-                                            <h4>其他特性:</h4>
-                                            <span>壁炉</span>
-                                        </li>
-                                    </ul>
+                                    <h3>简介</h3>
+                                    <p th:text="${room.trait}"></p>
                                 </div><!--details-info end-->
                                 <div class="features-dv">
                                     <h3>配置</h3>
