@@ -1,6 +1,7 @@
 package com.ali.rent.controller;
 
 import com.ali.rent.pojo.Room;
+import com.ali.rent.service.IHosterService;
 import com.ali.rent.service.RoomService;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
@@ -24,6 +25,8 @@ import java.util.List;
 public class RoomController {
     @Autowired
     private RoomService roomService;
+    @Autowired
+    private IHosterService hosterService;
 
     /**
      * 通过ID获取前端信息
@@ -34,6 +37,7 @@ public class RoomController {
     @RequestMapping("/{id}")
     public String showPic(@PathVariable("id") Integer id, ModelMap modelMap){
         modelMap.addAttribute("room",roomService.getRoomById(id));
+        modelMap.addAttribute("hoster",hosterService.getHosterById(id));
         return "24_Property_Single";
     }
     @RequestMapping("/01.Home")
