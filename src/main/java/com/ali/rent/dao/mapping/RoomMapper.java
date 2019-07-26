@@ -9,5 +9,6 @@ import java.util.List;
 
 public interface RoomMapper extends Mapper<Room> {
     int updateRoom(Integer id);
+    int insertRooom(Room room);
     List<Room> selectSortordAll(@Param("site")String site,@Param("pattern")String lease,@Param("layout")String layout,@Param("pricemin")String priceMin,@Param("pricemax")String priceMax,@Param("sortord")String sortord);
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ali.rent.dao.mapping.RoomMapper">
+	<!--
+      房源上传，数据写入数据库
+    -->
+    <insert id="insertRooom" >
+        INSERT INTO room (
+		hoster_id,
+		site_dis_id,
+		id,
+		name,
+		address,
+		size,
+		layout,
+		intro,
+		picture,
+		lease_pattern,
+		lease_time,
+		price
+)
+VALUES
+	(
+		#{hoster_id},
+		#{site_dis_id},
+		#{id},
+		#{NAME},
+		#{address},
+		#{size},
+		#{layout},
+		#{intro},
+		#{picture},
+		#{lease_pattern},
+		#{lease_time},
+		#{price}
+	);
+    </insert>
+
+</mapper>

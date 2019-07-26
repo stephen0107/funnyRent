@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ali.rent.dao.mapping.RoomMapper">
+  <resultMap id="BaseResultMap" type="com.ali.rent.pojo.Room">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="hoster_id" jdbcType="INTEGER" property="hosterId" />
+    <result column="site_dis_id" jdbcType="INTEGER" property="siteDisId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="size" jdbcType="INTEGER" property="size" />
+    <result column="layout" jdbcType="VARCHAR" property="layout" />
+    <result column="intro" jdbcType="VARCHAR" property="intro" />
+    <result column="pict1" jdbcType="VARCHAR" property="pict1" />
+    <result column="pict2" jdbcType="VARCHAR" property="pict2" />
+    <result column="pict3" jdbcType="VARCHAR" property="pict3" />
+    <result column="pict4" jdbcType="VARCHAR" property="pict4" />
+    <result column="pict5" jdbcType="VARCHAR" property="pict5" />
+    <result column="trait" jdbcType="VARCHAR" property="trait" />
+    <result column="lease_pattern" jdbcType="VARCHAR" property="leasePattern" />
+    <result column="lease_time" jdbcType="VARCHAR" property="leaseTime" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, hoster_id, site_dis_id, name, address, size, layout, intro, pict1, pict2, pict3, 
+    pict4, pict5, trait, lease_pattern, lease_time, price, flag
+  </sql>
+  <!--<select id="selectSortordAll" resultMap="BaseResultMap">
+      SELECT id,hoster_id,site_dis_id,name,address,size,layout,intro,pict1,pict2,pict3,pict4,pict5,trait,lease_pattern,lease_time,price,flag FROM room order by ${_parameter}
+  </select>-->
+  <select id="selectSortordAll" resultMap="BaseResultMap">
+select
+  t.id,
+  t.name,
+  t.address,
+  t.size,
+  t.layout,
+  t.lease_pattern,
+  t.price
+from
+  (
+  SELECT
+    p.province,
+    c.city,
+    d.district,
+    d.id as did,
+    r.id,
+    r.name,
+    r.address,
+    r.size,
+    r.layout,
+    r.lease_pattern,
+    r.price
+  FROM
+    site_pro p
+    LEFT JOIN site_city c
+      ON p.id = c.pro_id
+    LEFT JOIN site_dis d
+      ON c.id = d.city_id
+      LEFT JOIN room r
+      ON d.id = r.site_dis_id
+
+      ) t
+
+where (t.province LIKE "%${site}%" or  t.city LIKE "%${site}%" or  t.district like "%${site}%") and (t.lease_pattern like "%${pattern}%") AND (t.layout LIKE "%${layout}%") and (t.price between ${pricemin} and ${pricemax}) order by ${sortord}
+  </select>
+
+  <!--
+      房源上传，数据写入数据库
+    -->
+  <insert id="insertRooom">
+   INSERT INTO room (
+		NAME,
+		address,
+		size,
+		layout,
+		intro,
+		pict1,
+		trait,
+		lease_pattern,
+		lease_time,
+		price
+)
+VALUES(
+	#{name},
+	#{address},
+	#{size},
+	#{layout},
+	#{intro},
+	#{pict1},
+	#{trait},
+	#{leasePattern},
+	#{leaseTime},
+	#{price}
+	);
+    </insert>
+</mapper>

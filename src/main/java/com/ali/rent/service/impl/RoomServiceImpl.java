@@ -36,4 +36,9 @@ public class RoomServiceImpl implements RoomService {
         List<Room> rooms = roomMapper.selectSortordAll(site,pattern,layout,pricemin,pricemax,sortord);
         return rooms;
     }
+
+    @Override
+    public Integer insertRooom(Room room) {
+        return roomMapper.insertRooom(room);
+    }
 }
