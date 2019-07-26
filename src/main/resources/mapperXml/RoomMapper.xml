@@ -31,4 +31,43 @@
     id, hoster_id, site_dis_id, name, address, size, layout, intro, pict1, pict2, pict3, 
     pict4, pict5, trait, lease_pattern, lease_time, price, flag
   </sql>
+  <!--<select id="selectSortordAll" resultMap="BaseResultMap">
+      SELECT id,hoster_id,site_dis_id,name,address,size,layout,intro,pict1,pict2,pict3,pict4,pict5,trait,lease_pattern,lease_time,price,flag FROM room order by ${_parameter}
+  </select>-->
+  <select id="selectSortordAll" resultMap="BaseResultMap">
+select
+  t.id,
+  t.name,
+  t.address,
+  t.size,
+  t.layout,
+  t.lease_pattern,
+  t.price
+from
+  (
+  SELECT
+    p.province,
+    c.city,
+    d.district,
+    d.id as did,
+    r.id,
+    r.name,
+    r.address,
+    r.size,
+    r.layout,
+    r.lease_pattern,
+    r.price
+  FROM
+    site_pro p
+    LEFT JOIN site_city c
+      ON p.id = c.pro_id
+    LEFT JOIN site_dis d
+      ON c.id = d.city_id
+      LEFT JOIN room r
+      ON d.id = r.site_dis_id
+
+      ) t
+
+where (t.province LIKE "%${site}%" or  t.city LIKE "%${site}%" or  t.district like "%${site}%") and (t.lease_pattern like "%${pattern}%") AND (t.layout LIKE "%${layout}%") and (t.price between ${pricemin} and ${pricemax}) order by ${sortord}
+  </select>
 </mapper>

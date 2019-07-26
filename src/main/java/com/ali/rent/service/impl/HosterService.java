@@ -36,4 +36,33 @@ public class HosterService implements IHosterService {
         hoster.setCapacity(capacity);
         return hosterMapper.updateByPrimaryKey(hoster);
     }
+
+    @Override
+    public Integer addHoster(Hoster hoster) {
+        Integer count = hosterMapper.addHoster(hoster);
+        return count;
+    }
+
+
+    /**
+     * 判断用户名是否已存在
+     * @param username
+     * @return
+     */
+    @Override
+    public Integer checkName(String username) {
+        return hosterMapper.checkName(username);
+    }
+
+
+    /**
+     * 判断登录是否成功
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public Hoster findUsernameAndPassword(String username, String password) {
+        return hosterMapper.findUsernameAndPassword(username,password);
+    }
 }

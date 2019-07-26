@@ -27,4 +27,53 @@
     capacity, registration_time, flag
     
   </sql>
+  <!--李能明-->
+  <insert id="addHoster" parameterType="com.ali.rent.pojo.Hoster">
+    insert into hoster(username,password,phone,email,sex,id_card,portrait,business_area,capacity)
+    values (<trim suffixOverrides=",">
+    <if test=" username != null and username !=''">
+      #{username},
+    </if>
+    <if test=" password != null and password !=''">
+      #{password},
+    </if>
+    <if test=" phone != null and phone !=''">
+      #{phone},
+    </if>
+    <if test=" email != null and email !=''">
+      #{email},
+    </if>
+    <if test=" sex != null and sex !=''">
+      #{username},
+    </if>
+    <if test=" id_card != null and id_card !=''">
+      #{id_card},
+    </if>
+    <if test=" portrait != null and portrait !=''">
+      #{portrait},
+    </if>
+    <if test=" business_area != null and business_area !=''">
+      #{business_area},
+    </if>
+    <if test=" capacity != null and capacity !=''">
+      #{capacity}
+    </if>
+
+  </trim>
+
+    )
+  </insert>
+
+  <select id="checkName" resultType="com.ali.rent.pojo.Hoster">
+
+    select count(1) from hoster where username=#{username};
+
+  </select>
+
+
+  <select id="findUsernameAndPassword" resultType="com.ali.rent.pojo.Hoster">
+
+    select * from hoster where username=#{username} and password=#{password} and flag=2;
+
+  </select>
 </mapper>

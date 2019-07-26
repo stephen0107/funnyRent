@@ -30,4 +30,10 @@ public class RoomServiceImpl implements RoomService {
         room.setId(id);
         return roomMapper.selectByPrimaryKey(room);
     }
+
+    @Override
+    public List<Room> selectSortordAll(String site,String pattern,String layout,String pricemin,String pricemax,String sortord) {
+        List<Room> rooms = roomMapper.selectSortordAll(site,pattern,layout,pricemin,pricemax,sortord);
+        return rooms;
+    }
 }

@@ -1,7 +1,7 @@
 $(window).on("load", function() {
     "use strict";
     /*
-    更多精品Bootstrap模板请访问：http://www.bootstrapmb.com
+    锟斤拷锟洁精品Bootstrap模锟斤拷锟斤拷锟斤拷剩锟絟ttp://www.bootstrapmb.com
     */
 
 

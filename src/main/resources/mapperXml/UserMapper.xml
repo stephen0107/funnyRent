@@ -19,4 +19,40 @@
     -->
     id, username, password, phone, email, sex, flag
   </sql>
+
+  <!--李能名-->
+  <insert id="insertUser" parameterType="com.ali.rent.pojo.User">
+    insert into user(username,password,phone,email,sex)
+    values (<trim suffixOverrides=",">
+    <if test="username != null and username !=''">
+      #{username},
+    </if>
+    <if test="password != null and password !=''">
+      #{password},
+    </if>
+    <if test="phone != null and phone !=''">
+      #{phone},
+    </if>
+    <if test="email != null and email !=''">
+      #{email},
+    </if>
+    <if test="sex != null and sex !=''">
+      #{sex}
+    </if>
+  </trim>
+    )
+  </insert>
+
+  <select id="checkUserName" resultType="com.ali.rent.pojo.User">
+
+    select count(1) from user where username=#{username};
+
+  </select>
+
+
+  <select id="findByUserNameAndPassword" resultType="com.ali.rent.pojo.User">
+
+    select * from user where username=#{username} and password=#{password} and flag=3;
+
+  </select>
 </mapper>

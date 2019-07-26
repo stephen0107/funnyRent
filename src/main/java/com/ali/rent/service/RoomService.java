@@ -12,4 +12,6 @@ public interface RoomService {
     Integer updateById(Integer id);
 
     Room getRoomById(Integer id);
+
+    List<Room> selectSortordAll(String site,String pattern,String layout,String pricemin,String pricemax,String sortord);
 }
