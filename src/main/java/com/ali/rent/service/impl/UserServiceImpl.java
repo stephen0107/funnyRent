@@ -1,4 +1,4 @@
-package com.ali.rent.service;
+package com.ali.rent.service.impl;
 
 import com.ali.rent.dao.mapping.UserMapper;
 import com.ali.rent.pojo.User;
