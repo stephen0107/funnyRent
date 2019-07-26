@@ -217,7 +217,7 @@
                     <h3>房东信息</h3>
                     <ul>
                         <li><a href="#" title="">家</a></li>
-                        <li><span>房东</span></li>
+                        <li><a th:href="@{'/hoster/'+${hoster.id}+'/toupdatehoster'}"><span>房东资料修改</span></a> </li>
                     </ul>
                 </div><!--pager-sec-details end-->
             </div>
@@ -231,7 +231,8 @@
                             <div class="agent-profile">
                                 <div class="agent-img">
 
-                                    <img th:src="@{'../../static/images/hoster/'+${hoster.portrait}}" alt=""/>
+                                    <img th:src="@{${url}+${hoster.portrait}}" alt=""/>
+
                                 </div><!--agent-img end-->
                                 <div class="agent-info">
                                     <h3 th:text="${hoster.username}">Tomas Wilkinson</h3>

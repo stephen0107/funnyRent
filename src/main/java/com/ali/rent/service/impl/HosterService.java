@@ -24,7 +24,8 @@ public class HosterService implements IHosterService {
     }
 
     @Override
-    public int updateHoster(Integer id,String password,String phone,String email,String portrait,String business_area,String capacity) {
+    public int updateHoster(Integer id,String password,String phone,String email,String portrait,
+                            String business_area,String capacity) {
         Hoster hoster = new Hoster();
         hoster.setId(id);
         hoster = hosterMapper.selectOne(hoster);

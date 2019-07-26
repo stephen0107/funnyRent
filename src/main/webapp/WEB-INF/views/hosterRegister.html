@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        // var code;
+        // function toCode() {
+        //     // $.trim  去除输入框的两边空格
+        //     var email;
+        //     email=$.trim($("#email").val());
+        //     if(null!=email){
+        //         if (email!=''){
+        //             $.ajax({
+        //                 //这里的url对应的是 userController 里的 checkEmail方法
+        //                 url:"checkEmail",
+        //                 //类型
+        //                 type:"POST",
+        //                 //传输数据，返回email
+        //                 data:{
+        //                     email:function () {
+        //                         return email;
+        //                     }
+        //                 },
+        //                 success:function (response) {
+        //                     window.confirm("注册验证码已经发送到您的邮箱，请查收，请勿重复提交!!")
+        //                     code=response;
+        //                 }
+        //             })
+        //         }
+        //     }else {
+        //         alert("请先输入邮箱地址")
+        //     }
+        // }
+        //
+        // //校验 form表单   对表单中的各个文本框进行验证
+        // $("#hosterRegister").validate({
+        //     rules:{
+        //         username:{
+        //             //这里表示 必须输入字段
+        //             required:true,
+        //             //输入的长度最少为2个字符串
+        //             minlength:2,
+        //             //输入的长度最多为16个字符串
+        //             maxlength:16,
+        //
+        //             //使用 ajax 方法调用 check.php 验证输入值
+        //             remote:{
+        //                 url:"checkName",
+        //                 type:"POST",
+        //                 data:{
+        //                     username:function () {
+        //                         var username=$("#username").val();
+        //                         return username;
+        //                     }
+        //                 },
+        //             }
+        //
+        //         },
+        //         password:{
+        //             //这里表示 必须输入字段
+        //             required:true,
+        //             //输入的长度最少为8个字符串
+        //             minlength:8,
+        //             //输入的长度最多为20个字符串
+        //             maxlength:20
+        //
+        //         },
+        //         phone:{
+        //             //	必须输入整数
+        //             digits:true,
+        //
+        //             required:true,
+        //
+        //             //输入长度必须介于 11 和 11之间的字符串（汉字算一个字符）
+        //             rangelength:[11,11]
+        //         },
+        //         email:{
+        //             required: true,
+        //             email: true
+        //         },
+        //         checkcode:{
+        //             digits: true,
+        //             required: true,
+        //             rangelength: [4, 4]
+        //         },
+        //         sex:{
+        //             required: true
+        //         },
+        //         id_card:{
+        //
+        //             //这里表示 必须输入字段
+        //             required:true,
+        //
+        //             //	必须输入整数
+        //             digits:true,
+        //
+        //             rangelength:[18,18]
+        //         },
+        //         business_area:{
+        //             //这里表示 必须输入字段
+        //             required:true,
+        //
+        //             //输入的长度最少为3个字符串
+        //             minlength:3,
+        //             //输入的长度最多为50个字符串
+        //             maxlength:50
+        //         },
+        //         capacity:{
+        //             //这里表示 必须输入字段
+        //             required:true,
+        //             //输入的长度最少为0个字符串
+        //             minlength:0,
+        //             //输入的长度最多为20个字符串
+        //             maxlength:20
+        //         }
+        //     },
+        //
+        //     message:{
+        //         username: {
+        //             required: "请输入用户名",
+        //             minlength: "至少输入2个字符",
+        //             maxlength: "最多输入20个字符",
+        //             remote: "用户名相同"
+        //         },
+        //         password: {
+        //             required: "请输入密码",
+        //             minlength: "至少输入8个字符",
+        //             maxlength: "最多输入20个字符"
+        //         },
+        //         phone: {
+        //             required: "电话号码不能为空",
+        //             digits: "请输入数字",
+        //             rangelength: "电话号码为11位数字"
+        //         },
+        //         email: {
+        //             required: "请输入邮箱",
+        //             email: "请输入正确的邮箱格式"
+        //         },
+        //         checkcode: {
+        //             required: "请输入验证码",
+        //             digits: "请输入数字",
+        //             rangelength: "请输入四位数"
+        //         },
+        //         sex: {
+        //             required: "请选择性别"
+        //         },
+        //         id_card:{
+        //             required: "身份证号码不能为空",
+        //             digits: "请输入数字",
+        //             rangelength: "请输入18位数"
+        //         },
+        //         business_area:{
+        //             required:"房屋地址不能为空",
+        //             minlength: "至少输入2个字符",
+        //             maxlength: "最多输入50个字符"
+        //         },
+        //         capacity:{
+        //             required:"标签不能为空",
+        //             minlength: "至少输入2个字符",
+        //             maxlength: "最多输入20个字符"
+        //         }
+        //
+        //
+        //     }
+        // })
+        // $("#checkcode").blur(function () {
+        //     var checkcode = $.trim($("#checkcode").val());
+        //     if (code != checkcode) {
+        //         alert("验证码错误")
+        //     }
+        // })
+        //
+        // var check = function () {
+            // var falg = true;
+            // //进行校验表单是否填写完整
+            // var flags = false;
+            // if ($("#hosterRegister").valid()) {
+            //     if (falg){
+            //         // 1.获取用户输入
+        var check=function () {
+                    var username = $.trim($("#username").val());
+                    var password = $.trim($("#password").val());
+                    var phone = $.trim($("#phone").val());
+                    var email = $.trim($("#email").val());
+                    var sex = $("#sex option:selected").val();
+                    var id_card = $.trim($("#id_card").val());
+                    var portrait = $.trim($("#portrait").val());
+                    var business_area = $.trim($("#business_area").val());
+                    var capacity = $.trim($("#capacity").val());
+
+                    // var b = window.confirm("恭喜您注册成功,是否立即登录");
+                    // flags = true;
+                    // if(b){
+                    //     window.location.href = "02_Home.html"
+                    // }
+                    $.ajax({
+                        async:false,
+                        type: "POST",
+                        url: "addHoster",
+                        dataType: "JSON",
+                        contentType: "application/json",
+                        data: JSON.stringify({
+                            "username": username,
+                            "password": password,
+                            "phone": phone,
+                            "email": email,
+                            "sex": sex,
+                            "id_card":id_card,
+                            "portrait":portrait,
+                            "business_area":business_area,
+                            "capacity":capacity,
+                        }),
+                        success: function (response) {
+                            console.log(response)
+                            if (response >= 1) {
+                                window.location.href = "02_Home.html";
+                            }
+                        },
+                        error: function (response) {
+                            console.error();
+                        }
+                    })
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+   <h3>房东注册页面</h3>
+   <form id="hosterRegister" action="addHoster" method="post" onsubmit="return check()">
+       <div class="form-field">
+           <input type="text" name="username" id="username" placeholder="姓名"/>
+       </div><br/>
+
+       <div class="form-field">
+           <input type="password" name="password" id="password" placeholder="密码"/>
+       </div><br/>
+
+       <div class="form-field">
+           <input type="text" name="phone" id="phone" placeholder="手机号码"/>
+       </div><br/>
+
+       <div class="form-field">
+           <input type="text" name="email" id="email"  placeholder="邮箱"/>
+       </div>
+
+       <!--<div class="form-field">-->
+           <!--<input type="button" onclick="toCode()" name="button" value="获取验证码" class="input-signtype"-->
+                  <!--style="background-color:#55AA00"/>-->
+       <!--</div>-->
+
+       <!--<div class="form-field">-->
+           <!--<input class="input-signtype" type="text" id="checkcode" name="checkcode" required=""-->
+                  <!--placeholder="验证码"/>-->
+       <!--</div><br/>-->
+
+       <div class="form-field">
+           <select name="sex" id="sex" class="form-field" required="required">
+               <option disabled="disabled" selected="selected"><font
+                       style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                   性别
+               </font></font></option>
+               <option value="男"><font style="vertical-align: inherit;"><font
+                       style="vertical-align: inherit;">男</font></font></option>
+               <option value="女"><font style="vertical-align: inherit;"><font
+                       style="vertical-align: inherit;">女</font></font></option>
+           </select>
+       </div><br/>
+
+       <div class="form-field">
+           <input type="text" name="id_card" id="id_card"  placeholder="身份证号码"/>
+       </div><br/>
+
+       <div class="form-group">
+         <div class="input-group col-md-4">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+         <input class="form-control" placeholder="请选择头像" type="file" id="portrait" name="portrait"/>
+         </div>
+       </div><br/>
+
+       <div class="form-field">
+           <input type="text" name="business_area" id="business_area"  placeholder="出租房地点"/>
+       </div><br/>
+
+       <div class="form-field">
+           <input type="text" name="capacity" id="capacity"  placeholder="标签"/>
+       </div><br/>
+
+
+       <div class="form-cp">
+           <a href="#" title="" class="signin-op">已有账号，去登录</a>
+       </div><!--form-cp end-->
+       <button type="submit" class="btn2">提交</button>
+   </form>
+
+</body>
+</html>
