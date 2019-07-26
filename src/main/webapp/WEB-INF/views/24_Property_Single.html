@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="../../static/assets/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../static/assets/css/responsive.css"/>
     <link rel="stylesheet" type="text/css" href="../../static/assets/css/color.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <script type="text/javascript" src="../../static/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript">
-      $(function () {
+    <!-- Maps -->
+   <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RBGUyzZms2bpvdasbtuuEGytBaE7OfjZ" ></script>-->
 
-      })
-    </script>
 </head>
 
 <body>
@@ -716,11 +716,11 @@
                                 <div class="widget widget-form">
                                     <h3 class="widget-title">联系经理人</h3>
                                     <div class="contct-info">
-                                        <img src="../../static/assets/images/resources/user-img.png" alt=""/>
+                                        <img th:src="@{'../../static/images/hoster/'+${hoster.portrait}}" alt=""/>
                                         <div class="contct-nf">
-                                            <h3>Tomas Wilkinson</h3>
+                                            <h3 th:text="${hoster.username}">Tomas Wilkinson</h3>
                                             <h4>链家集团</h4>
-                                            <span><i class="la la-phone"></i>+1 212-925-3797</span>
+                                            <span th:text="${hoster.phone}"><i class="la la-phone"></i>+1 212-925-3797</span>
                                         </div>
                                     </div><!--contct-info end-->
                                     <div class="post-comment-sec">
@@ -939,14 +939,27 @@
     <script src="../../static/assets/js/lib/slick/slick.js"></script>
     <script src="../../static/assets/js/scripts.js"></script>
 
+
     <!-- Maps -->
     <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyDVwc4veKudU0qjYrLrrQXacCkDkcy3AeQ"></script>
     <script src="../../static/assets/js/map-cluster/infobox.min.js"></script>
     <script src="../../static/assets/js/map-cluster/markerclusterer.js"></script>
     <script src="../../static/assets/js/map-cluster/map2.js"></script>
-
-
-
 </body>
 
 </html>
+<!--
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    //添加地图类型控件
+
+    map.addControl(new BMap.MapTypeControl({
+        mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>-->
